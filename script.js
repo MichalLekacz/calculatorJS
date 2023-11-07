@@ -1,9 +1,12 @@
 let currentResult = '';
 const historyList = document.getElementById('history');
+const maxInputLength = 12; // Maksymalna długość liczby
 
 function appendToResult(value) {
-    currentResult += value;
-    document.getElementById('result').textContent = currentResult;
+    if (currentResult.length < maxInputLength) {
+        currentResult += value;
+        document.getElementById('result').textContent = currentResult;
+    }
 }
 
 function clearResult() {
